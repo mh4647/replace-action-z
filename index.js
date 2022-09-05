@@ -6,6 +6,7 @@ try {
   var filenames = files.replace(' ', '').split(',')
   var vars = vars_string.split(',')
   console.log('files l:' + filenames.length)
+  console.log('vars:' + vars)
   for (var fi = 0; fi < filenames.length; fi++) {
     var filename = filenames[fi]
     var fs = require('fs')
