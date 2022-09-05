@@ -1,4 +1,4 @@
-name: 'Replace Action'
+name: 'Replace Action-Z'
 description: 'Replaces substrings in files. Useful to enrich configs with previous steps artifacts.'
 author: Data Monsters
 branding:

@@ -74,3 +74,6 @@ jobs:
 # License
 
 The scripts and documentation in this project are released under the [MIT License](LICENSE) 
+
+This is a fork from https://github.com/datamonsters/replace-action.
+I created this action becasue the the old repository doesn't get updated for 3 years.
