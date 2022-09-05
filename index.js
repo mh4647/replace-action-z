@@ -5,30 +5,30 @@ try {
   const vars_string = core.getInput('replacements');
   var filenames = files.replace(' ', '').split(',')
   var vars = vars_string.split(',')
-  console.log('files l:'+ filenames.length)
-  for(var fi = 0; fi < filenames.length; fi++)
-  {
+  console.log('files l:' + filenames.length)
+  for (var fi = 0; fi < filenames.length; fi++) {
     var filename = filenames[fi]
     var fs = require('fs')
-    console.log('file1: '+ fi + ' '+filename)
-    fs.readFile(filename, 'utf8', function (err,data) {
+    console.log('file1: ' + fi + ' ' + filename)
+    fs.readFile(filename, 'utf8', function (err, data) {
       if (err) {
         console.log(err);
       } else {
         var result = data
         console.log(data)
-        for(var i = 0; i < vars.length; i++)
-        {
-          var firstEqual = vars[i].indexOf('=');
-    	  var key = vars[i].substr(0,firstEqual);
-    	  var value = vars[i].substr(firstEqual+1);
-    	  result = result.replace(key, value)
+        for (var i = 0; i < vars.length; i++) {
+          var kv = vars[i].split('=')
+          var key = kv[0]
+          var value = kv[1]
+          console.log("key: " + key);
+          console.log("Value: " + value);
+          result = result.replace(key, value)
         }
-        console.log('file2: '+filename)
+        console.log('file2: ' + filename)
         fs.writeFile(filename, result, 'utf8', function (err) {
-          if (err) 
+          if (err)
             console.log(err)
-          else 
+          else
             console.log(result)
         });
       }
