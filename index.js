@@ -1,15 +1,15 @@
-const core = require("@actions/core");
+import { getInput, setFailed } from "@actions/core";
 
 try {
-  const files = core.getInput("files");
-  const vars_string = core.getInput("replacements");
+  const files = getInput("files");
+  const vars_string = getInput("replacements");
   const filenames = files.replace(" ", "").split(",");
   const vars = vars_string.split(",");
-  console.log("files l:" + filenames.length);
+  console.log(`files l: ${filenames.length}`);
   for (let fi = 0; fi < filenames.length; fi++) {
     const filename = filenames[fi];
     const fs = require("fs");
-    console.log("file1: " + fi + " " + filename);
+    console.log(`file1: ${fi} ${n}`);
     fs.readFile(filename, "utf8", function (err, data) {
       if (err) {
         console.log(err);
@@ -22,7 +22,7 @@ try {
           const value = vars[i].substring(firstEqual + 1);
           result = result.replace(key, value);
         }
-        console.log("file2: " + filename);
+        console.log(`file2: ${filename}`);
         fs.writeFile(filename, result, "utf8", function (err) {
           if (err) console.log(err);
           else console.log(result);
@@ -31,5 +31,5 @@ try {
     });
   }
 } catch (error) {
-  core.setFailed(error.message);
+  setFailed(error.message);
 }
