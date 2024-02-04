@@ -6,7 +6,7 @@ try {
   const filenames = files.replace(" ", "").split(",");
   const vars = vars_string.split(",");
   console.log("files l:" + filenames.length);
-  for (var fi = 0; fi < filenames.length; fi++) {
+  for (let fi = 0; fi < filenames.length; fi++) {
     const filename = filenames[fi];
     const fs = require("fs");
     console.log("file1: " + fi + " " + filename);
