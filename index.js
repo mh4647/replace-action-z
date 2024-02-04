@@ -17,9 +17,11 @@ try {
         const result = data;
         console.log(data);
         for (let i = 0; i < vars.length; i++) {
-          const firstEqual = vars[i].indexOf("=");
-          const key = vars[i].substring(0, firstEqual);
-          const value = vars[i].substring(firstEqual + 1);
+          const kv = vars[i].split('=')
+          const key = kv[0]
+          const value = kv[1]
+          console.log("key: " + key);
+          console.log("Value: " + value);
           result = result.replace(key, value);
         }
         console.log(`file2: ${filename}`);
