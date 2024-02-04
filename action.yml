@@ -1,4 +1,4 @@
-name: 'Replace Action'
+name: 'Replace Action-Z'
 description: 'Replaces substrings in files. Useful to enrich configs with previous steps artifacts.'
 author: Data Monsters
 branding:
@@ -12,5 +12,5 @@ inputs:
     description: 'Comma-separated pairs PLACEHOLDER=value'
     required: true
 runs:
-  using: 'node12'
+  using: 'node20'
   main: 'index.js'
