@@ -20,8 +20,8 @@ try {
           const kv = vars[i].split('=')
           const key = kv[0]
           const value = kv[1]
-          console.log("key: " + key);
-          console.log("Value: " + value);
+          console.log(`key: ${key}`);
+          console.log(`Value: ${value}`);
           result = result.replace(key, value);
         }
         console.log(`file2: ${filename}`);
