@@ -1,8 +1,8 @@
-import { getInput, setFailed } from "@actions/core";
+const core = require('@actions/core');
 
 try {
-  const files = getInput("files");
-  const vars_string = getInput("replacements");
+  const files = core.getInput("files");
+  const vars_string = core.getInput("replacements");
   const filenames = files.replace(" ", "").split(",");
   const vars = vars_string.split(",");
   console.log(`files l: ${filenames.length}`);
@@ -33,5 +33,5 @@ try {
     });
   }
 } catch (error) {
-  setFailed(error.message);
+  core.setFailed(error.message);
 }
