@@ -77,3 +77,10 @@ The scripts and documentation in this project are released under the [MIT Licens
 
 This is a fork from https://github.com/datamonsters/replace-action.
 I created this action becasue the the old repository doesn't get updated for 3 years.
+
+
+# Update Version 
+$ npm install @actions/core
+$ npm install @actions/github
+$ ncc build index.js --license licenses.txt
+$ npm i --package-lock-only

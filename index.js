@@ -9,7 +9,7 @@ try {
   for (let fi = 0; fi < filenames.length; fi++) {
     const filename = filenames[fi];
     const fs = require("fs");
-    console.log(`file1: ${fi}`);
+    console.log(`file1: ${fi} filename ${filename}`);
     fs.readFile(filename, "utf8", function (err, data) {
       if (err) {
         console.log(err);
