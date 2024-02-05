@@ -18,7 +18,7 @@ jobs:
         run: echo "The time was ${{ steps.hello.outputs.time }}"
 
       - name Replace string value
-       uses: mh4647/replace-action-z@V2.0.8
-       with:
-        files: 'test/replace.txt'
-        replacements: '%NAME%=Boaz'
+        uses: mh4647/replace-action-z@V2.0.8
+        with:
+         files: 'test/replace.txt'
+         replacements: '%NAME%=Boaz'
