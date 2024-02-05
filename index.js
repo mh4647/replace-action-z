@@ -14,7 +14,7 @@ try {
       if (err) {
         console.log(err);
       } else {
-        const result = data;
+        let result = data;
         console.log(data);
         for (let i = 0; i < vars.length; i++) {
           const kv = vars[i].split('=')
