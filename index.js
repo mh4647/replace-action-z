@@ -19,7 +19,10 @@ try {
         for (let i = 0; i < vars.length; i++) {
           const kv = vars[i].split('=')
           const key = kv[0]
-          const value = kv[1]
+          let value = "";
+          for (let i = 1; i < kv.length; i++) {
+            value += kv[i];
+          }
           console.log(`key: ${key}`);
           console.log(`Value: ${value}`);
           result = result.replace(key, value);
