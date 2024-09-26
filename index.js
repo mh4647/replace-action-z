@@ -29,13 +29,13 @@ try {
           if(showLogs) {
             console.log(`key: ${key}`);
             console.log(`Value: ${value}`);
-          }      
+          }
           result = result.replace(key, value);
         }
         if(showLogs) {
           console.log(`file2: ${filename}`);
         }
-      
+
         fs.writeFile(filename, result, "utf8", function (suc, err) {
           if (err) {
             console.error("Error writing file:", err);
