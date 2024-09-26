@@ -4,6 +4,7 @@ try {
   const files = core.getInput("files");
   const vars_string = core.getInput("replacements");
   const showDebugLogs = core.getInput("showDebugLogs") || false;
+  const delimiter = core.getInput("delimiter") || '=';
   const filenames = files.replace(" ", "").split(",");
   const vars = vars_string.split(",");
   console.log(`files l: ${filenames.length}`);
@@ -20,12 +21,9 @@ try {
           console.log(data);
         }
         for (let i = 0; i < vars.length; i++) {
-          const kv = vars[i].split('=')
+          const kv = vars[i].split(delimiter)
           const key = kv[0]
-          let value = "";
-          for (let j = 1; j < kv.length; j++) {
-            value += kv[j];
-          }
+          const value = kv[1]
           if(showDebugLogs) {
             console.log(`key: ${key}`);
             console.log(`Value: ${value}`);
