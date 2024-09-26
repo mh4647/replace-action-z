@@ -16,7 +16,7 @@ try {
         console.log(err);
       } else {
         let result = data;
-        if(showLogs) {
+        if(showDebugLogs) {
           console.log(data);
         }
         for (let i = 0; i < vars.length; i++) {
@@ -26,13 +26,13 @@ try {
           for (let j = 1; j < kv.length; j++) {
             value += kv[j];
           }
-          if(showLogs) {
+          if(showDebugLogs) {
             console.log(`key: ${key}`);
             console.log(`Value: ${value}`);
           }
           result = result.replace(key, value);
         }
-        if(showLogs) {
+        if(showDebugLogs) {
           console.log(`file2: ${filename}`);
         }
 
