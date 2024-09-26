@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Replace string value
-        uses: mh4647/replace-action-z@V2.0.12
+        uses: mh4647/replace-action-z@V2.0.14
         with:
           files: 'test/replace.txt'
           replacements: '%NAME%=Boaz'

@@ -3,9 +3,9 @@ const core = require('@actions/core');
 try {
   const files = core.getInput("files");
   const vars_string = core.getInput("replacements");
+  const showDebugLogs = core.getInput("showDebugLogs") || false;
   const filenames = files.replace(" ", "").split(",");
   const vars = vars_string.split(",");
-  const showDebugLogs = core.getInput("showDebugLogs") || false;
   console.log(`files l: ${filenames.length}`);
   for (let fi = 0; fi < filenames.length; fi++) {
     const filename = filenames[fi];
