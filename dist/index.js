@@ -26591,9 +26591,9 @@ const core = __nccwpck_require__(3636);
 try {
   const files = core.getInput("files");
   const vars_string = core.getInput("replacements");
+  const showDebugLogs = core.getInput("showDebugLogs") || false;
   const filenames = files.replace(" ", "").split(",");
   const vars = vars_string.split(",");
-  const showDebugLogs = core.getInput("showDebugLogs") || false;
   console.log(`files l: ${filenames.length}`);
   for (let fi = 0; fi < filenames.length; fi++) {
     const filename = filenames[fi];
@@ -26617,13 +26617,13 @@ try {
           if(showLogs) {
             console.log(`key: ${key}`);
             console.log(`Value: ${value}`);
-          }      
+          }
           result = result.replace(key, value);
         }
         if(showLogs) {
           console.log(`file2: ${filename}`);
         }
-      
+
         fs.writeFile(filename, result, "utf8", function (suc, err) {
           if (err) {
             console.error("Error writing file:", err);
