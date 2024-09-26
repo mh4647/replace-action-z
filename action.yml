@@ -11,6 +11,9 @@ inputs:
   replacements:
     description: 'Comma-separated pairs PLACEHOLDER=value'
     required: true
+  showDebugLogs:
+    description: 'Determine if to show the content value to replace with'
+    required: false
 runs:
   using: 'node20'
   main: 'dist/index.js'
