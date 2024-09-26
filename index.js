@@ -20,8 +20,8 @@ try {
           const kv = vars[i].split('=')
           const key = kv[0]
           let value = "";
-          for (let i = 1; i < kv.length; i++) {
-            value += kv[i];
+          for (let j = 1; j < kv.length; j++) {
+            value += kv[j];
           }
           console.log(`key: ${key}`);
           console.log(`Value: ${value}`);
@@ -30,7 +30,6 @@ try {
         console.log(`file2: ${filename}`);
         fs.writeFile(filename, result, "utf8", function (err) {
           if (err) console.log(err);
-          else console.log(result);
         });
       }
     });
